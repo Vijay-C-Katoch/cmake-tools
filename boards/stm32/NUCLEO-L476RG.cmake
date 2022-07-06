@@ -1,10 +1,10 @@
 
-target_compile_options(cube PUBLIC
+target_compile_options(cubeL4 PUBLIC
   -DUSE_HAL_DRIVER
-  -DSTM32F769xx
+  -DSTM32L4xx
   )
 
-target_include_directories(cube PUBLIC
+target_include_directories(cubeL4 PUBLIC
   $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Inc>
   $<INSTALL_INTERFACE:bsp/Inc>
 
@@ -12,9 +12,9 @@ target_include_directories(cube PUBLIC
   ${CUBE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1
   ${CUBE_DIR}/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2
 
-  ${CUBE_DIR}/Drivers/CMSIS/Device/ST/STM32F7xx/Include
+  ${CUBE_DIR}/Drivers/CMSIS/Device/ST/STM32L4xx/Include
   ${CUBE_DIR}/Drivers/CMSIS/Include
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Inc
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Inc
 
   ${CUBE_DIR}/Middlewares/Third_Party/LwIP/src/include
   ${CUBE_DIR}/Middlewares/Third_Party/LwIP/system
@@ -22,7 +22,7 @@ target_include_directories(cube PUBLIC
   ${CUBE_DIR}/Middlewares/Third_Party/FatFs/src
   )
 
-target_include_directories(cube PRIVATE
+target_include_directories(cubeL4 PRIVATE
   ${CUBE_DIR}/Middlewares/Third_Party/LwIP/src/include/compat/posix
   ${CUBE_DIR}/Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa
   ${CUBE_DIR}/Middlewares/Third_Party/LwIP/src/include/compat/posix/net
@@ -32,7 +32,7 @@ target_include_directories(cube PRIVATE
   ${CUBE_DIR}/Middlewares/Third_Party/LwIP/system/arch
   )
 
-target_sources(cube PRIVATE
+target_sources(cubeL4 PRIVATE
   ${CORE_DIR}/Src/bsp_driver_sd.c
   ${CORE_DIR}/Src/ethernetif.c
   ${CORE_DIR}/Src/fatfs.c
@@ -87,29 +87,29 @@ target_sources(cube PRIVATE
   ${CUBE_DIR}/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c
   ${CUBE_DIR}/Middlewares/Third_Party/FatFs/src/option/syscall.c
 
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.c
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.c
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_eth.c
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.c
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_sd.c
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim.c
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_tim_ex.c
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c
-  ${CUBE_DIR}/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_ll_sdmmc.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_eth.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_sd.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c
+  ${CUBE_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_sdmmc.c
   )
 
-add_library(cube-bsp INTERFACE)
-target_sources(cube-bsp INTERFACE
+add_library(cubeL4-bsp INTERFACE)
+target_sources(cubeL4-bsp INTERFACE
   $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Src/freertos.c>
   $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Src/main.c>
   $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Src/startup_stm32f769xx.s>
-  $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Src/stm32f7xx_hal_msp.c>
-  $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Src/stm32f7xx_hal_timebase_tim.c>
-  $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Src/stm32f7xx_it.c>
+  $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Src/stm32l4xx_hal_msp.c>
+  $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Src/stm32l4xx_hal_timebase_tim.c>
+  $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Src/stm32l4xx_it.c>
   $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Src/stubs.c>
   $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Src/syscalls.c>
   $<BUILD_INTERFACE:${OSAL_SOURCE_DIR}/${CORE_DIR}/Src/system_stm32f7xx.c>
@@ -117,22 +117,17 @@ target_sources(cube-bsp INTERFACE
   $<INSTALL_INTERFACE:bsp/Src/freertos.c>
   $<INSTALL_INTERFACE:bsp/Src/main.c>
   $<INSTALL_INTERFACE:bsp/Src/startup_stm32f769xx.s>
-  $<INSTALL_INTERFACE:bsp/Src/stm32f7xx_hal_msp.c>
-  $<INSTALL_INTERFACE:bsp/Src/stm32f7xx_hal_timebase_tim.c>
-  $<INSTALL_INTERFACE:bsp/Src/stm32f7xx_it.c>
+  $<INSTALL_INTERFACE:bsp/Src/stm32l4xx_hal_msp.c>
+  $<INSTALL_INTERFACE:bsp/Src/stm32l4xx_hal_timebase_tim.c>
+  $<INSTALL_INTERFACE:bsp/Src/stm32l4xx_it.c>
   $<INSTALL_INTERFACE:bsp/Src/stubs.c>
   $<INSTALL_INTERFACE:bsp/Src/syscalls.c>
   $<INSTALL_INTERFACE:bsp/Src/system_stm32f7xx.c>
   )
-target_link_options(cube-bsp INTERFACE
+target_link_options(cubeL4-bsp INTERFACE
   -specs=nano.specs
   -T${OSAL_SOURCE_DIR}/${CORE_DIR}/STM32F769NIHx_FLASH.ld
   )
-target_link_libraries(cube-bsp INTERFACE cube)
-if (CMAKE_PROJECT_NAME STREQUAL OSAL AND BUILD_TESTING)
-  target_link_libraries(osal_test PRIVATE cube-bsp)
-endif()
 
-install(TARGETS cube-bsp EXPORT OsalTargets)
 install(DIRECTORY ${CORE_DIR}/Src DESTINATION bsp)
 install(DIRECTORY ${CORE_DIR}/Inc DESTINATION bsp)
