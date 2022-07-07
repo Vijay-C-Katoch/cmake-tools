@@ -23,7 +23,6 @@ ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/diskio.c
 ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/ff.c
 ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
 ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
-${STM32_DIR}/Middlewares/Third_Party/FatFs/src/option/ccsbcs.c
 ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/option/syscall.c
 
 ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c
