@@ -7,10 +7,6 @@ target_compile_options(cubeL4 PUBLIC
 target_include_directories(cubeL4 PUBLIC
   $<INSTALL_INTERFACE:bsp/Inc>
 
-  ${STM32_DIR}/Middlewares/Third_Party/FreeRTOS/Source/include
-  ${STM32_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1
-  ${STM32_DIR}/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2
-
   ${STM32_DIR}/Drivers/CMSIS/Device/ST/STM32L4xx/Include
   ${STM32_DIR}/Drivers/CMSIS/Include
   ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Inc
@@ -94,10 +90,21 @@ target_include_directories(cubeL4 PRIVATE
   ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_sdmmc.c
   )
 
+  add_library(cubeL4-bsp INTERFACE)
+  target_sources(cubeL4-bsp INTERFACE
+    $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/main.c>
+    $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/startup_stm32l476xx.s>
+    $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/stm32l4xx_hal_msp.c>
+    $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/stm32l4xx_it.c>
+    $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/syscalls.c>
+    $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/sysmem.c>
+    $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/system_stm32l4xx.c>
+
 target_link_options(cubeL4-bsp INTERFACE
   -specs=nano.specs
   -T${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/STM32L476RGTX_FLASH.ld
   )
+target_link_libraries(cubeL4-bsp INTERFACE cube)
 
 install(DIRECTORY ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src DESTINATION bsp)
 install(DIRECTORY ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Inc DESTINATION bsp)
