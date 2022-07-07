@@ -16,7 +16,6 @@ ${STM32_DIR}/Middlewares/Third_Party/FatFs/src
 
 target_sources(cubeL4 PRIVATE
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/fatfs.c
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/fatfs_platform.c
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/user_diskio.c
 
 ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/diskio.c
