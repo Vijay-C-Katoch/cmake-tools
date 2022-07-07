@@ -60,7 +60,7 @@ target_link_options(cubeL4-bsp INTERFACE
   -specs=nano.specs
   -T${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/STM32L476RGTX_FLASH.ld
   )
-target_link_libraries(cubeL4-bsp INTERFACE cube)
+target_link_libraries(cubeL4-bsp INTERFACE cubeL4)
 
 install(DIRECTORY ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src DESTINATION bsp)
 install(DIRECTORY ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Inc DESTINATION bsp)
