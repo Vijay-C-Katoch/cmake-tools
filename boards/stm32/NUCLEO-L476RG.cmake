@@ -96,8 +96,8 @@ target_include_directories(cubeL4 PRIVATE
 
 target_link_options(cubeL4-bsp INTERFACE
   -specs=nano.specs
-  -T${HARDWARE_DIR}/boards/stm32/STM32L476RGTX_FLASH.ld
+  -T${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/STM32L476RGTX_FLASH.ld
   )
 
-install(DIRECTORY ${HARDWARE_DIR}/boards/stm32/Src DESTINATION bsp)
-install(DIRECTORY ${HARDWARE_DIR}/boards/stm32/Inc DESTINATION bsp)
+install(DIRECTORY ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src DESTINATION bsp)
+install(DIRECTORY ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Inc DESTINATION bsp)
