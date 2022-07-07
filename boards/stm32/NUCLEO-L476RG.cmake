@@ -11,63 +11,10 @@ target_include_directories(cubeL4 PUBLIC
   ${STM32_DIR}/Drivers/CMSIS/Include
   ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Inc
 
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/include
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/system
-
   ${STM32_DIR}/Middlewares/Third_Party/FatFs/src
   )
 
 target_include_directories(cubeL4 PRIVATE
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/include/compat/posix
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/include/compat/posix/arpa
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/include/compat/posix/net
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/include/compat/posix/sys
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/include/compat/stdc
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/include/netif
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/system/arch
-  )
-
-
-  ${STM32_DIR}/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
-  ${STM32_DIR}/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
-  ${STM32_DIR}/Middlewares/Third_Party/FreeRTOS/Source/list.c
-  ${STM32_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c
-  ${STM32_DIR}/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
-  ${STM32_DIR}/Middlewares/Third_Party/FreeRTOS/Source/queue.c
-  ${STM32_DIR}/Middlewares/Third_Party/FreeRTOS/Source/tasks.c
-  ${STM32_DIR}/Middlewares/Third_Party/FreeRTOS/Source/timers.c
-
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/api/api_lib.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/api/api_msg.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/api/err.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/api/if_api.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/api/netbuf.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/api/netdb.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/api/netifapi.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/api/sockets.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/api/tcpip.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/def.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/init.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/ip.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/ipv4/dhcp.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/ipv4/etharp.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/ipv4/icmp.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/ipv4/ip4.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_addr.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/ipv4/ip4_frag.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/mem.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/memp.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/netif.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/pbuf.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/stats.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/tcp.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/tcp_in.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/tcp_out.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/timeouts.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/core/udp.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/src/netif/ethernet.c
-  ${STM32_DIR}/Middlewares/Third_Party/LwIP/system/OS/sys_arch.c
-
   ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/diskio.c
   ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/ff.c
   ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
