@@ -14,13 +14,13 @@ Machine-specific flags will be loaded from toolchain/${CPU}.cmake. See
 the toolchain folder for known values.
 
 Your CMAKE_MODULE_PATH must also be configured so that
-Platform/STM32.cmake can be found.
+Platform/STM32L4.cmake can be found.
 #]=======================================================================]
 
 include_guard()
 
 # The name of the target operating system
-set(CMAKE_SYSTEM_NAME STM32)
+set(CMAKE_SYSTEM_NAME STM32L4)
 
 set(CPU $ENV{CPU} CACHE STRING "")
 set(BOARD $ENV{BOARD} CACHE STRING "")
