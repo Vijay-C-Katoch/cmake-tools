@@ -5,7 +5,7 @@ target_compile_options(cubeL4 PUBLIC
 )
 
 target_include_directories(cubeL4 PUBLIC
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Inc>
+$<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Inc>
 $<INSTALL_INTERFACE:bsp/Inc>
 
 ${STM32_DIR}/Drivers/CMSIS/Device/ST/STM32L4xx/Include
