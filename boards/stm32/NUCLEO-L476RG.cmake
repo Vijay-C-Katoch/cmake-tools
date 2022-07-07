@@ -14,7 +14,7 @@ ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Inc
 ${STM32_DIR}/Middlewares/Third_Party/FatFs/src
 )
 
-target_include_directories(cubeL4 PRIVATE
+target_sources(cubeL4 PRIVATE
 ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/diskio.c
 ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/ff.c
 ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
