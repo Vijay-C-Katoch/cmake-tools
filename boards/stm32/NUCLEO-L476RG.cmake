@@ -1,7 +1,7 @@
 
 target_compile_options(cubeL4 PUBLIC
 -DUSE_HAL_DRIVER
--DSTM32L4xx
+-DSTM32L476xx
 )
 
 target_include_directories(cubeL4 PUBLIC
