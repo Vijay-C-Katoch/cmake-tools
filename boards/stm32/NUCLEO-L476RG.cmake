@@ -25,7 +25,6 @@ ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/option/syscall.c
 ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c
 ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c
 ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c
-${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_eth.c
 ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c
 ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c
 ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c
