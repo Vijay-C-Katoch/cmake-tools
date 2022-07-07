@@ -8,6 +8,7 @@ configuration is invoked::
   CPU           - Name of CPU
   BOARD         - Name of board
   STM32_DIR     - Path to STM32 firmware
+  HARDWARE_DIR  - Path to Hardware directory containing board setup
 
 Machine-specific flags will be loaded from toolchain/${CPU}.cmake. See
 the toolchain folder for known values.
@@ -21,9 +22,10 @@ include_guard()
 # The name of the target operating system
 set(CMAKE_SYSTEM_NAME STM32)
 
-set(CPU $ENV{CPU} CACHE STRING "")
-set(BOARD $ENV{BOARD} CACHE STRING "")
-set(STM32_DIR $ENV{STM32_DIR} CACHE STRING "")
+set(CPU $ENV{CPU} CACHE STRING "" FORCE)
+set(BOARD $ENV{BOARD} CACHE STRING "" FORCE)
+set(STM32_DIR $ENV{STM32_DIR} CACHE PATH "STM firmware dir path")
+set(HARDWARE_DIR $ENV{HARDWARE_DIR} CACHE PATH "Hardware board setup dir path") 
 
 # Set cross-compiler toolchain
 set(CMAKE_C_COMPILER arm-none-eabi-gcc)
