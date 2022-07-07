@@ -47,6 +47,15 @@ target_include_directories(cubeL4 PRIVATE
     $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/sysmem.c>
     $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/system_stm32l4xx.c>
 
+    $<INSTALL_INTERFACE:bsp/Src/main.c>
+    $<INSTALL_INTERFACE:bsp/Src/startup_stm32l476xx.s>
+    $<INSTALL_INTERFACE:bsp/Src/stm32l4xx_hal_msp.c>
+    $<INSTALL_INTERFACE:bsp/Src/stm32l4xx_it.c>
+    $<INSTALL_INTERFACE:bsp/Src/syscalls.c>
+    $<INSTALL_INTERFACE:bsp/Src/sysmem.c>
+    $<INSTALL_INTERFACE:bsp/Src/system_stm32l4xx.c>
+    )
+
 target_link_options(cubeL4-bsp INTERFACE
   -specs=nano.specs
   -T${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/STM32L476RGTX_FLASH.ld
