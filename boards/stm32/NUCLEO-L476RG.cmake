@@ -43,7 +43,7 @@ ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_sdmmc.c
 add_library(cubeL4-bsp INTERFACE)
 target_sources(cubeL4-bsp INTERFACE
   $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/main.c>
-  $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/startup_stm32l476xx.s>
+  $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/startup_stm32l476rgtx.s>
   $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/stm32l4xx_hal_msp.c>
   $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/stm32l4xx_it.c>
   $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/syscalls.c>
@@ -51,7 +51,7 @@ target_sources(cubeL4-bsp INTERFACE
   $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/system_stm32l4xx.c>
 
   $<INSTALL_INTERFACE:bsp/Src/main.c>
-  $<INSTALL_INTERFACE:bsp/Src/startup_stm32l476xx.s>
+  $<INSTALL_INTERFACE:bsp/Src/startup_stm32l476rgtx.s>
   $<INSTALL_INTERFACE:bsp/Src/stm32l4xx_hal_msp.c>
   $<INSTALL_INTERFACE:bsp/Src/stm32l4xx_it.c>
   $<INSTALL_INTERFACE:bsp/Src/syscalls.c>
