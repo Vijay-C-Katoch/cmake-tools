@@ -65,8 +65,9 @@ target_sources(cubeL4-bsp INTERFACE
   $<INSTALL_INTERFACE:bsp/Src/system_stm32l4xx.c>
   )
 
-target_link_options(cubeL4-bsp INTERFACE
+target_link_options(cubeL4 INTERFACE
 -specs=nano.specs
+-specs=nosys.specs
 -T${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/STM32L476RGTX_FLASH.ld
 )
 target_link_libraries(cubeL4-bsp INTERFACE cubeL4)
