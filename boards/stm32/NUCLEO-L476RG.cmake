@@ -20,6 +20,11 @@ ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/board_init.c
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/startup_stm32l476rgtx.s
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/fatfs.c
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/user_diskio.c
+${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/stm32l4xx_hal_msp.c>
+${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/stm32l4xx_it.c>
+${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/syscalls.c>
+${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/sysmem.c>
+${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/system_stm32l4xx.c>
 
 ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/diskio.c
 ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/ff.c
