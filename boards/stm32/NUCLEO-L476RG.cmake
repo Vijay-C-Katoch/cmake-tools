@@ -41,7 +41,7 @@ ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_sdmmc.c
 
 add_library(cubeL4-bsp INTERFACE)
 target_sources(cubeL4-bsp INTERFACE
-  $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/main.c>
+  $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/board_init.c>
   $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/startup_stm32l476rgtx.s>
   $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/stm32l4xx_hal_msp.c>
   $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/stm32l4xx_it.c>
