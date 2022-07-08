@@ -49,7 +49,7 @@ target_sources(cubeL4-bsp INTERFACE
   $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/sysmem.c>
   $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/system_stm32l4xx.c>
 
-  $<INSTALL_INTERFACE:bsp/Src/main.c>
+  $<INSTALL_INTERFACE:bsp/Src/board_init.c>
   $<INSTALL_INTERFACE:bsp/Src/startup_stm32l476rgtx.s>
   $<INSTALL_INTERFACE:bsp/Src/stm32l4xx_hal_msp.c>
   $<INSTALL_INTERFACE:bsp/Src/stm32l4xx_it.c>
