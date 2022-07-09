@@ -21,12 +21,14 @@ ${STM32_DIR}/Middlewares/Third_Party/FatFs/src
 target_sources(cubeL4 PUBLIC
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/board_init.c
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/fatfs.c
+${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/gpio.c
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/startup_stm32l476rgtx.s
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/stm32l4xx_hal_msp.c
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/stm32l4xx_it.c
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/syscalls.c
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/sysmem.c
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/system_stm32l4xx.c
+${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/usart.c
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/user_diskio.c
 
 ${STM32_DIR}/Middlewares/Third_Party/FatFs/src/diskio.c
