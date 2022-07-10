@@ -5,6 +5,8 @@ target_compile_options(cubeL4 PUBLIC
 -DDEBUG
 -DUSE_HAL_DRIVER
 -DSTM32L476xx
+-fdata-sections
+-ffunction-sections
 )
 
 target_include_directories(cubeL4 PUBLIC
@@ -58,10 +60,3 @@ ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c
 ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c
 ${STM32_DIR}/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_sdmmc.c
 )
-
-target_link_options(cubeL4 PUBLIC
--specs=nano.specs
--specs=nosys.specs
--T${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/STM32L476RGTX_FLASH.ld
-)
-
