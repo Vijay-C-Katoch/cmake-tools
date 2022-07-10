@@ -9,9 +9,6 @@ configuration is invoked::
   STM32_DIR     - Path to STM32 firmware
   HARDWARE_DIR  - Path to Hardware directory containing board setup
 
-Machine-specific flags will be loaded from toolchain/${CPU}.cmake. See
-the toolchain folder for known values.
-
 Your CMAKE_MODULE_PATH must also be configured so that
 Platform/vendor-none.cmake can be found, to build for non vendor and/or
 non-os embedded system.
