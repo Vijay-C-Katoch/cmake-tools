@@ -1,3 +1,11 @@
+#[=======================================================================[.rst:
+STM32 NUCLEO-L476RG board static library creation
+----------------------------------------------------
+
+This cmake script is for building and creating static library of
+thirdparty hardware or board firmware.
+
+#]=======================================================================]
 
 add_library(cubeL4 STATIC)
 
