@@ -4,7 +4,29 @@ set(Board_Variant "L475R(C-E-G)T_L476R(C-E-G)T_L486RGT")
 
 add_library(stm32duino STATIC)
 
-set(ARDUINO_SRC
+target_compile_options(stm32duino PUBLIC
+-DDEBUG
+-fdata-sections
+-ffunction-sections
+)
+
+target_include_directories(stm32duino PUBLIC
+
+${STM32_DUINO}/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}
+
+${STM32_DUINO}/Arduino_Core_STM32/cores/arduino/avr
+${STM32_DUINO}/Arduino_Core_STM32/cores/arduino/stm32
+${STM32_DUINO}/Arduino_Core_STM32/cores/arduino
+${STM32_DUINO}/Arduino_Core_STM32/cores/arduino/stm32/usb
+${STM32_DUINO}/Arduino_Core_STM32/cores/arduino/stm32/OpenAMP
+
+${STM32_DUINO}/Arduino_Core_STM32/libraries/SrcWrapper/src
+${STM32_DUINO}/Arduino_Core_STM32/libraries/SrcWrapper/src/HAL
+${STM32_DUINO}/Arduino_Core_STM32/libraries/SrcWrapper/src/LL
+${STM32_DUINO}/Arduino_Core_STM32/libraries/SrcWrapper/src/stm32
+)
+
+target_sources(stm32duino PUBLIC
 ${STM32_DUINO}/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}/variant_NUCLEO_L476RG.cpp
 
 ${STM32_DUINO}/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}/PeripheralPins.c 
@@ -86,12 +108,6 @@ ${STM32_DUINO}/Arduino_Core_STM32/cores/arduino/stm32/OpenAMP/open-amp/rpmsg/rpm
 ${STM32_DUINO}/Arduino_Core_STM32/cores/arduino/stm32/OpenAMP/virtio/virtio.c
 ${STM32_DUINO}/Arduino_Core_STM32/cores/arduino/stm32/OpenAMP/virtio/virtqueue.c
 
-
-)
- 
-# SrcWrapper lib
-
-set(SRCWRAPPER_SRC
 
 ${STM32_DUINO}/Arduino_Core_STM32/libraries/SrcWrapper/src/syscalls.c
 ${STM32_DUINO}/Arduino_Core_STM32/libraries/SrcWrapper/src/HAL/stm32yyxx_hal.c
@@ -261,6 +277,3 @@ ${STM32_DUINO}/Arduino_Core_STM32/libraries/SrcWrapper/src/stm32/analog.cpp
 ${STM32_DUINO}/Arduino_Core_STM32/libraries/SrcWrapper/src/stm32/interrupt.cpp
 
 )
-
-# add_library(SrcWrapper STATIC ${SRCWRAPPER_SRC})
-# set_target_properties(SrcWrapper PROPERTIES LINKER_LANGUAGE C)
