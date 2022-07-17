@@ -26,58 +26,59 @@ target_compile_options(stm32duino PUBLIC
 target_include_directories(stm32duino PUBLIC
 $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Inc>
 
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/system/STM32L4xx
+${TP_DIR}/stm32duino/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/STM32L4xx
 
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Include
 
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/avr
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/LL
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/usb
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/usb/hid 
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/usb/cdc
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/OpenAMP
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/avr
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/LL
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/usb
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/usb/hid 
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/usb/cdc
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/OpenAMP
 
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Inc
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Src
-
-
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Inc 
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Src
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/open-amp/lib/include
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/libmetal/lib/include
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/virtual_driver
-
-${STM32_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Inc
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Src
 
 
-# ${STM32_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src
-# ${STM32_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src/HAL
-# ${STM32_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src/LL
-# ${STM32_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src/stm32
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Inc 
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Src
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/open-amp/lib/include
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/libmetal/lib/include
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/virtual_driver
 
-# ${STM32_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src
+
+
+# ${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src
+# ${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src/HAL
+# ${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src/LL
+# ${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src/stm32
+
+# ${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Include
 
 
 #STM32 cube includes
-${STM32_DIR}/STM32CubeL4/Drivers/CMSIS/Core/Include
-${STM32_DIR}/STM32CubeL4/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/gcc
-# ${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src
+${TP_DIR}/ARM/CMSIS_5/CMSIS/Core/Include
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/gcc
+#${TP_DIR}/STM32CubeL4/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/gcc
+# ${TP_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src
 # ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src
 )
 
 
 file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS 
-"${STM32_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/startup_stm32yyxx.S"
-"${STM32_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/*.c"
-"${STM32_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/*.cpp"
-"${STM32_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/*.c"
-"${STM32_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/*.cpp"
-"${STM32_DIR}/stm32duino/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}/*.c"
-"${STM32_DIR}/stm32duino/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}/*.cpp"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/startup_stm32yyxx.S"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/*.c"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/*.cpp"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/*.c"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/*.cpp"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}/*.c"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}/*.cpp"
 )
 
 target_sources(stm32duino PUBLIC 
