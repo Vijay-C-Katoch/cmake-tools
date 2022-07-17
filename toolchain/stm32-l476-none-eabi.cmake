@@ -28,7 +28,7 @@ set(HARDWARE_DIR $ENV{HARDWARE_DIR} CACHE PATH "Hardware board setup dir path")
 
 # Target Setup for Toolchain: target-vendor-os triplet 
 set(CMAKE_SYSTEM_NAME vendor-none)
-set(CMAKE_SYSTEM_PROCESSOR ${CPU})
+set(CMAKE_SYSTEM_PROCESSOR cortex-m4)
 
 # Set specefic cross-compiler for this toolchain
 set(CMAKE_C_COMPILER arm-none-eabi-gcc${HOST_EXECUTABLE_SUFFIX})

@@ -84,5 +84,5 @@ file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS
 target_sources(stm32duino PUBLIC 
 ${SOURCE_FILES} 
 
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/board_init.c
+${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/clock_config.c
 )
