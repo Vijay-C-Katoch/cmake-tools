@@ -28,24 +28,24 @@ set(HARDWARE_DIR $ENV{HARDWARE_DIR} CACHE PATH "Hardware board setup dir path")
 
 # Target Setup for Toolchain: target-vendor-os triplet 
 set(CMAKE_SYSTEM_NAME vendor-none)
-set(CMAKE_SYSTEM_PROCESSOR cortex-m4)
+set(CMAKE_SYSTEM_PROCESSOR cortex-a53)
 
 # Set specefic cross-compiler for this toolchain
-set(CMAKE_C_COMPILER arm-none-eabi-gcc${HOST_EXECUTABLE_SUFFIX})
-set(CMAKE_CXX_COMPILER arm-none-eabi-g++${HOST_EXECUTABLE_SUFFIX})
-set(OBJCOPY arm-none-eabi-objcopy${HOST_EXECUTABLE_SUFFIX})
-set(CMAKE_ASM-ATT_COMPILER arm-none-eabi-as${HOST_EXECUTABLE_SUFFIX})
+set(CMAKE_C_COMPILER arm-none-linux-gnueabihf-gcc${HOST_EXECUTABLE_SUFFIX})
+set(CMAKE_CXX_COMPILER arm-none-linux-gnueabihf-g++${HOST_EXECUTABLE_SUFFIX})
+set(OBJCOPY arm-none-linux-gnueabihf-objcopy${HOST_EXECUTABLE_SUFFIX})
+set(CMAKE_ASM-ATT_COMPILER arm-none-linux-gnueabihf-as${HOST_EXECUTABLE_SUFFIX})
 
 # Set compiler flags. Note: These are cached, any addition later should 
 # be with FORCE.
 set(CMAKE_C_FLAGS_INIT
-  "-mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb"
+  "-mcpu=cortex-a53 -mfpu=vfpv3 -mfloat-abi=hard"
 )
 set(CMAKE_CXX_FLAGS_INIT
-  "-mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb"
+  "-mcpu=cortex-a53 -mfpu=vfpv3 -mfloat-abi=hard"
 )
 set(CMAKE_ASM_FLAGS_INIT
-  "-mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb"
+  "-mcpu=cortex-a53 -mfpu=vfpv3 -mfloat-abi=hard"
 )
 
 # Avoid testing compiler by compiling a default file.
