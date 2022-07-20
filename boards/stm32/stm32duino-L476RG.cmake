@@ -39,6 +39,7 @@ ${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/OpenAMP
 ${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Inc
 ${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Src
 
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/gcc
 
 ${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Inc 
 ${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Src
@@ -49,21 +50,7 @@ ${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/virtual_drive
 
 ${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src
 
-
-# ${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src
-# ${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src/HAL
-# ${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src/LL
-# ${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src/stm32
-
-# ${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Include
-
-
-#STM32 cube includes
 ${TP_DIR}/ARM/CMSIS_5/CMSIS/Core/Include
-${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/gcc
-#${TP_DIR}/STM32CubeL4/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/gcc
-# ${TP_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src
-# ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src
 )
 
 
@@ -79,6 +66,5 @@ file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS
 
 target_sources(stm32duino PUBLIC 
 ${SOURCE_FILES} 
-
 ${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/clock_config.c
 )

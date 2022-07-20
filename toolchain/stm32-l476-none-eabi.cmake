@@ -6,7 +6,7 @@ The following environment variables must be set when cmake
 configuration is invoked::
 
   BOARD           - Name of board
-  TP_DIR - Path to third-party sources
+  TP_DIR          - Path to third-party sources
   HARDWARE_DIR    - Path to Hardware directory containing board setup
 
 Your CMAKE_MODULE_PATH must also be configured so that
