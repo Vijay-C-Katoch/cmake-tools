@@ -1,3 +1,12 @@
+#[=======================================================================[.rst:
+STM32Duino for NUCLEO-L476RG board library creation
+----------------------------------------------------
+
+This cmake script is for building and creating static library from
+STM32Duino source for STM32 NUCLEO-L476RG board.
+
+#]=======================================================================]
+
 set(Variant "STM32L4xx")
 set(Board_Variant "L475R\(C-E-G\)T_L476R\(C-E-G\)T_L486RGT")
 
