@@ -1,70 +1,70 @@
-#[=======================================================================[.rst:
-STM32 NUCLEO-L476RG board static library creation
-----------------------------------------------------
+set(Variant "STM32L4xx")
+set(Board_Variant "L475R\(C-E-G\)T_L476R\(C-E-G\)T_L486RGT")
 
-This cmake script is for building and creating static library of
-thirdparty hardware or board firmware.
+add_library(stm32duino STATIC)
 
-#]=======================================================================]
-
-add_library(cubeL4 STATIC)
-
-target_compile_options(cubeL4 PUBLIC
--DDEBUG
--DUSE_HAL_DRIVER
+target_compile_options(stm32duino PUBLIC
+-DUSE_FULL_LL_DRIVER
+-DRELEASE
+-DSTM32L4xx
 -DSTM32L476xx
+-DARDUINO=10808
+-DARDUINO_ARCH_STM32
+-DARDUINO_NUCLEO_L476RG
+"-DBOARD_NAME=\"NUCLEO_L476RG\"" 
+"-DVARIANT_H=\"variant_NUCLEO_L476RG.h\"" 
+-DHAL_UART_MODULE_ENABLED
 -fdata-sections
 -ffunction-sections
 )
 
-target_include_directories(cubeL4 PUBLIC
+# include directories from stm32duino repo
+target_include_directories(stm32duino PUBLIC
 $<BUILD_INTERFACE:${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Inc>
-$<INSTALL_INTERFACE:bsp/Inc>
 
-${STM32_DIR}/STM32CubeL4/Drivers/CMSIS/Device/ST/STM32L4xx/Include
-${STM32_DIR}/STM32CubeL4/Drivers/CMSIS/Include
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Inc
+${TP_DIR}/stm32duino/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/STM32L4xx
 
-${STM32_DIR}/STM32CubeL4/Middlewares/Third_Party/FatFs/src
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/avr
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/LL
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/usb
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/usb/hid 
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/usb/cdc
+${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/OpenAMP
+
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Inc
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/STM32L4xx_HAL_Driver/Src
+
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Drivers/CMSIS/Device/ST/STM32L4xx/Source/Templates/gcc
+
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Inc 
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/ST/STM32_USB_Device_Library/Core/Src
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/open-amp/lib/include
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/libmetal/lib/include
+${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/virtual_driver
+
+${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src
+
+${TP_DIR}/ARM/CMSIS_5/CMSIS/Core/Include
 )
 
-target_sources(cubeL4 PUBLIC
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/board_init.c
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/fatfs.c
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/gpio.c
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/startup_stm32l476rgtx.s
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/stm32l4xx_hal_msp.c
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/stm32l4xx_it.c
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/syscalls.c
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/sysmem.c
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/system_stm32l4xx.c
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/usart.c
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/user_diskio.c
 
-${STM32_DIR}/STM32CubeL4/Middlewares/Third_Party/FatFs/src/diskio.c
-${STM32_DIR}/STM32CubeL4/Middlewares/Third_Party/FatFs/src/ff.c
-${STM32_DIR}/STM32CubeL4/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
-${STM32_DIR}/STM32CubeL4/Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
-${STM32_DIR}/STM32CubeL4/Middlewares/Third_Party/FatFs/src/option/syscall.c
+file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS 
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/startup_stm32yyxx.S"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/*.c"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/*.cpp"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/*.c"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/*.cpp"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}/*.c"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}/*.cpp"
+)
 
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_sd.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c
-${STM32_DIR}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_sdmmc.c
+target_sources(stm32duino PUBLIC 
+${SOURCE_FILES} 
+${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/clock_config.c
 )
