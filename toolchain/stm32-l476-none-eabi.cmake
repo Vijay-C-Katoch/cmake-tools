@@ -5,9 +5,9 @@ Toolchain for STM32 L476XX
 The following environment variables must be set when cmake
 configuration is invoked::
 
-  BOARD         - Name of board
-  STM32_DIR     - Path to STM32 firmware
-  HARDWARE_DIR  - Path to Hardware directory containing board setup
+  BOARD           - Name of board
+  TP_DIR          - Path to third-party sources
+  HARDWARE_DIR    - Path to Hardware directory containing board setup
 
 Your CMAKE_MODULE_PATH must also be configured so that
 Platform/vendor-none.cmake can be found, to build for non vendor and/or
@@ -22,7 +22,7 @@ set(DUMMY ${CMAKE_TOOLCHAIN_FILE})
 
 # Collect all environment variables for this toolchain
 set(BOARD $ENV{BOARD} CACHE STRING "")
-set(STM32_DIR $ENV{STM32_DIR} CACHE PATH "STM firmware dir path")
+set(TP_DIR $ENV{TP_DIR} CACHE PATH "Third-party sources path")
 set(HARDWARE_DIR $ENV{HARDWARE_DIR} CACHE PATH "Hardware board setup dir path") 
 
 
