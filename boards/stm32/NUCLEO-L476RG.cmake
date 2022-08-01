@@ -57,6 +57,8 @@ ${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/open-amp/lib/
 ${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/libmetal/lib/include
 ${TP_DIR}/stm32duino/Arduino_Core_STM32/system/Middlewares/OpenAMP/virtual_driver
 
+${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/Wire/src
+
 ${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/src
 
 ${TP_DIR}/ARM/CMSIS_5/CMSIS/Core/Include
@@ -67,6 +69,8 @@ file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS
 "${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/stm32/startup_stm32yyxx.S"
 "${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/*.c"
 "${TP_DIR}/stm32duino/Arduino_Core_STM32/cores/arduino/*.cpp"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/Wire/*.c"
+"${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/Wire/*.cpp"
 "${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/*.c"
 "${TP_DIR}/stm32duino/Arduino_Core_STM32/libraries/SrcWrapper/*.cpp"
 "${TP_DIR}/stm32duino/Arduino_Core_STM32/variants/${Variant}/${Board_Variant}/*.c"
