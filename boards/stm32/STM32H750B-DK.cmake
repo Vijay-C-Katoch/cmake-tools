@@ -152,7 +152,6 @@ file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS
 "${TP_DIR}/framework-stm32cubeh7/Utilities/ResourcesManager/*.c"
 )
 
-target_sources(stm32duino PUBLIC 
+target_sources(framework-stm32cubeh7 PUBLIC 
 ${SOURCE_FILES} 
-${HARDWARE_DIR}/boards/stm32/NUCLEO-L476RG/Src/clock_config.c
 )
