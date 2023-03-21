@@ -23,6 +23,8 @@ target_compile_options(framework-stm32cubeh7 PUBLIC
 # include directories from STM32CubeH7 MCU Firmware repo
 target_include_directories(framework-stm32cubeh7 PUBLIC
 
+${HARDWARE_DIR}/boards/stm32/STM32H750B-DK/Inc
+
 ${TP_DIR}/framework-stm32cubeh7/Drivers/CMSIS/Include
 ${TP_DIR}/framework-stm32cubeh7/Drivers/CMSIS/Device/ST/STM32H7xx/Include
 ${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Inc
@@ -107,49 +109,25 @@ ${TP_DIR}/framework-stm32cubeh7/Middlewares/ST/STM32_USB_Host_Library/Class/MTP/
 file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS 
 "${HARDWARE_DIR}/boards/stm32/STM32H750B-DK/Startup/startup_stm32h750xbhx.s"
 
-"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/*.c"
-
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/s70kl1281/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/rk070er9427/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/st7735/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/ts3510/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/Common/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/lan8742/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/ampire480272/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/m24lr64/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/ft6x06/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/is42s32800g/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/mt48lc4m32b2/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/is42s16800j/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/ampire640480/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/ov5640/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/cs42l51/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/otm8009a/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/es_wifi/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/mfxstm32l152/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/mx25lm51245g/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/mx_wifi/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/mt25tl01g/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/rk043fn48h/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/s5k5cag/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/adv7533/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/ft5336/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/is42s32800j/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/stmpe811/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/ov9655/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/wm8994/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/exc7200/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Adafruit_Shield/*.c"
-
-"${TP_DIR}/framework-stm32cubeh7/Middlewares/ST/STM32_USB_Device_Library/Class/*/Src/*.c"
-
-"${TP_DIR}/framework-stm32cubeh7/Utilities/Common/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Utilities/JPEG/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Utilities/Fonts/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Utilities/lcd/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Utilities/Lcd_Trace/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Utilities/CPU/*.c"
-"${TP_DIR}/framework-stm32cubeh7/Utilities/ResourcesManager/*.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c"
+"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c"
 )
 
 target_sources(framework-stm32cubeh7 PUBLIC 
