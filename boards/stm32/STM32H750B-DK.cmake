@@ -14,7 +14,7 @@ target_compile_options(framework-stm32cubeh7 PUBLIC
 -DDEBUG
 -DUSE_HAL_DRIVER
 -DSTM32H7xx
--DSTM32H735xx
+-DSTM32H750xx
 -DF_CPU=550000000L
 -fdata-sections
 -ffunction-sections
