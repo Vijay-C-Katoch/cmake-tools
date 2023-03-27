@@ -133,7 +133,6 @@ file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS
 "${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_ltdc.c"
 "${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_ltdc_ex.c"
 "${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.c"
-"${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_ospi.c"
 "${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c"
 "${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c"
 "${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c"
