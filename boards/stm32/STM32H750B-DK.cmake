@@ -25,11 +25,14 @@ target_include_directories(framework-stm32cubeh7 PUBLIC
 
 ${HARDWARE_DIR}/boards/stm32/STM32H750B-DK/Inc
 
+${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Inc
+${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy
+${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src
+
 ${TP_DIR}/framework-stm32cubeh7/Drivers/CMSIS/Include
 ${TP_DIR}/framework-stm32cubeh7/Drivers/CMSIS/Device/ST/STM32H7xx/Include
-${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Inc
-${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src
 ${TP_DIR}/framework-stm32cubeh7/Drivers/CMSIS/DSP/Include
+
 ${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/s70kl1281
 ${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/rk070er9427
 ${TP_DIR}/framework-stm32cubeh7/Drivers/BSP/Components/st7735
