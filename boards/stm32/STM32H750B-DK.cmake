@@ -156,12 +156,15 @@ file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS
 "${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.c"
 "${TP_DIR}/framework-stm32cubeh7/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_usb.c"
 
+"${HARDWARE_DIR}/boards/stm32/STM32H750B-DK/Src/fdcan.c"
+"${HARDWARE_DIR}/boards/stm32/STM32H750B-DK/Src/gpio.c"
 "${HARDWARE_DIR}/boards/stm32/STM32H750B-DK/Src/stm32h7xx_hal_msp.c"
 "${HARDWARE_DIR}/boards/stm32/STM32H750B-DK/Src/stm32h7xx_hal_timebase_tim.c"
 "${HARDWARE_DIR}/boards/stm32/STM32H750B-DK/Src/stm32h7xx_it.c"
 "${HARDWARE_DIR}/boards/stm32/STM32H750B-DK/Src/syscalls.c"
 "${HARDWARE_DIR}/boards/stm32/STM32H750B-DK/Src/sysmem.c"
 "${HARDWARE_DIR}/boards/stm32/STM32H750B-DK/Src/system_stm32h7xx.c"
+"${HARDWARE_DIR}/boards/stm32/STM32H750B-DK/Src/tim.c"
 )
 
 target_sources(framework-stm32cubeh7 PUBLIC 
