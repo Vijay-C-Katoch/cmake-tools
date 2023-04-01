@@ -39,13 +39,13 @@ set(CMAKE_ASM-ATT_COMPILER arm-none-eabi-as${HOST_EXECUTABLE_SUFFIX})
 # Set compiler flags. Note: These are cached, any addition later should 
 # be with FORCE.
 set(CMAKE_C_FLAGS_INIT
-  "-mcpu=cortex-m7 -mthumb"
+  "-mcpu=cortex-m7 -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb"
 )
 set(CMAKE_CXX_FLAGS_INIT
-  "-mcpu=cortex-m7 -mthumb"
+  "-mcpu=cortex-m7 -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb"
 )
 set(CMAKE_ASM_FLAGS_INIT
-  "-mcpu=cortex-m7 -mthumb"
+  "-mcpu=cortex-m7 -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb"
 )
 
 # Avoid testing compiler by compiling a default file.
